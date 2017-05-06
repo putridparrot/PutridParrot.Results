@@ -6,7 +6,7 @@ Sometimes we want to return more than just a return value.
 
 For example, we might tend to return an object and if the object is null a failure occurred, but in some situations a null is a valid return and so how do we return whether the method succeeded or not. Ofcourse we might use out/ref params, but they're a bit messy at times (although getting better with C# 7). So then we might return a Tuple (again getting better with C# 7) but then we have the situation of ensuring that we're consistent with which value is the success or failure status. Finally we might use exceptions to return failure, which come with good and bad points but as (in this instance) they're really acting more like part of the code's flow, they're probably best left to those "exceptional" circumstances instead of short cuts for returning failures.
 
-Okay, it's not a big deal, we've got plenty of options and here's another which is slightly more obvious in its use, the Result class.
+Okay, it's not a big deal, we've got plenty of options and here's another which is a simple little Result class (as other classes to support it).
 
 Let's take a look at the various parts...
 
