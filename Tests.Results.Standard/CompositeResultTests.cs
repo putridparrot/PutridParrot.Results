@@ -5,7 +5,9 @@ using Results;
 
 namespace Tests.Results
 {
+#if !NETSTANDARD1_6
     [ExcludeFromCodeCoverage]
+#endif  
     [TestFixture]
     public class CompositeResultTests
     {
