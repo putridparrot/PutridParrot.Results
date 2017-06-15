@@ -30,4 +30,4 @@ This class allows us to take multiple Result returns and aggregate them, allowin
 
 ## Thanks
 
-![Powered by NDepend](https://user-images.githubusercontent.com/7886450/27169849-9c070308-51a3-11e7-8b7e-04fe6f4d9194.jpg)
+![Powered by NDepend](http://putridparrot.com/blog/wp-content/uploads/2017/06/NDependLogo.jpg)
