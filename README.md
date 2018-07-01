@@ -28,3 +28,6 @@ This class simply offers a fluent style interface to the Result objects. It's mo
 
 This class allows us to take multiple Result returns and aggregate them, allowing us to see if afFailure exists or all Result's succeeed, for example.
 
+## Thanks
+
+![Powered by NDepend](http://putridparrot.com/blog/wp-content/uploads/2017/06/NDependLogo.jpg)
