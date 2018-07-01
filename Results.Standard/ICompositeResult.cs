@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace Results
+namespace PutridParrot.Results
 {
     /// <summary>
     /// Interface which allows us to implement result composition/aggregation.

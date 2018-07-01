@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
-using Results;
+using PutridParrot.Results;
 
 namespace Tests.Results
 {

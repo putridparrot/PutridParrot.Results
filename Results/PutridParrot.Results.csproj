@@ -7,8 +7,8 @@
     <ProjectGuid>{09BB8F4D-6A53-4095-A69E-C01A622B915B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Results</RootNamespace>
-    <AssemblyName>Results</AssemblyName>
+    <RootNamespace>PutridParrot.Results</RootNamespace>
+    <AssemblyName>PutridParrot.Results</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

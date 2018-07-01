@@ -1,4 +1,4 @@
-namespace Results
+namespace PutridParrot.Results
 {
     /// <summary>
     /// A basic implementation of a status code message

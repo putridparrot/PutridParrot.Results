@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Results.Standard\Results.Standard.csproj" />
+    <ProjectReference Include="..\Results.Standard\PutridParrot.Results.Standard.csproj" />
   </ItemGroup>
 
 </Project>

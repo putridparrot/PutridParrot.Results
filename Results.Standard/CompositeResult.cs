@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Results
+namespace PutridParrot.Results
 {
     /// <summary>
     /// An implementation of a ICompositeResult. The basic implementation

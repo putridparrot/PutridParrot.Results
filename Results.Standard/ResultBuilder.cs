@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Results
+namespace PutridParrot.Results
 {
     /// <summary>
     /// Fluent interface for a those who prefer such an interface. This class

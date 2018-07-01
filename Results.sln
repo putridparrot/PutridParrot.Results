@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Results", "Results\Results.csproj", "{09BB8F4D-6A53-4095-A69E-C01A622B915B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PutridParrot.Results", "Results\PutridParrot.Results.csproj", "{09BB8F4D-6A53-4095-A69E-C01A622B915B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Results", "Tests.Results\Tests.Results.csproj", "{971D0575-BB9A-46C5-99A8-E5AD2C2947B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Results.Standard", "Results.Standard\Results.Standard.csproj", "{1FE01436-3C7E-425F-A6B9-97529CC2348C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PutridParrot.Results.Standard", "Results.Standard\PutridParrot.Results.Standard.csproj", "{1FE01436-3C7E-425F-A6B9-97529CC2348C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Results.Standard", "Tests.Results.Standard\Tests.Results.Standard.csproj", "{65A592D1-853D-4F2D-8F8F-84A1B630AF25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Results.Standard", "Tests.Results.Standard\Tests.Results.Standard.csproj", "{65A592D1-853D-4F2D-8F8F-84A1B630AF25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAE58D02-4DF5-4A94-B36F-11034DFB6A62}
 	EndGlobalSection
 EndGlobal

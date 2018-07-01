@@ -1,4 +1,4 @@
-namespace Results
+namespace PutridParrot.Results
 {
     /// <summary>
     /// A return/result status

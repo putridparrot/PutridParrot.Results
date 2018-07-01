@@ -59,9 +59,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Results\Results.csproj">
+    <ProjectReference Include="..\Results\PutridParrot.Results.csproj">
       <Project>{09bb8f4d-6a53-4095-a69e-c01a622b915b}</Project>
-      <Name>Results</Name>
+      <Name>PutridParrot.Results</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

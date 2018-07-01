@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace Results
+namespace PutridParrot.Results
 {
     /// <summary>
     /// A result may take different forms, they just need

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Results
+namespace PutridParrot.Results
 {
     /// <summary>
     /// A simple and general implementation of the IResult. This is 
