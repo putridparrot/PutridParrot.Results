@@ -8,8 +8,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PutridParrot.Results</RootNamespace>
-    <AssemblyName>PutridParrot.Results</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <AssemblyName>PutridParrot.Results.4.7.1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -41,25 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Results.Standard\CompositeResult.cs">
+    <Compile Include="..\PutridParrot.Results\CompositeResult.cs">
       <Link>CompositeResult.cs</Link>
     </Compile>
-    <Compile Include="..\Results.Standard\ICompositeResult.cs">
+    <Compile Include="..\PutridParrot.Results\ICompositeResult.cs">
       <Link>ICompositeResult.cs</Link>
     </Compile>
-    <Compile Include="..\Results.Standard\IResult.cs">
+    <Compile Include="..\PutridParrot.Results\IResult.cs">
       <Link>IResult.cs</Link>
     </Compile>
-    <Compile Include="..\Results.Standard\Result.cs">
+    <Compile Include="..\PutridParrot.Results\Result.cs">
       <Link>Result.cs</Link>
     </Compile>
-    <Compile Include="..\Results.Standard\ResultBuilder.cs">
+    <Compile Include="..\PutridParrot.Results\ResultBuilder.cs">
       <Link>ResultBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\Results.Standard\ResultStatus.cs">
+    <Compile Include="..\PutridParrot.Results\ResultStatus.cs">
       <Link>ResultStatus.cs</Link>
     </Compile>
-    <Compile Include="..\Results.Standard\StatusCode.cs">
+    <Compile Include="..\PutridParrot.Results\StatusCode.cs">
       <Link>StatusCode.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tests.Results</RootNamespace>
     <AssemblyName>Tests.Results</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -44,24 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Tests.Results.Standard\CompositeResultTests.cs">
-      <Link>CompositeResultTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Tests.Results.Standard\ResultBuilderTests.cs">
-      <Link>ResultBuilderTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Tests.Results.Standard\ResultTests.cs">
-      <Link>ResultTests.cs</Link>
-    </Compile>
+    <Compile Include="CompositeResultTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultBuilderTests.cs" />
+    <Compile Include="ResultTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Results\PutridParrot.Results.csproj">
+    <ProjectReference Include="..\PutridParrot.Results.4.7.1\PutridParrot.Results.4.7.1.csproj">
       <Project>{09bb8f4d-6a53-4095-a69e-c01a622b915b}</Project>
-      <Name>PutridParrot.Results</Name>
+      <Name>PutridParrot.Results.4.7.1</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
