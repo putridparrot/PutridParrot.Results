@@ -1,9 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>PutridParrot.Results</AssemblyName>
-    <RootNamespace>PutridParrot.Results</RootNamespace>
+    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
   </PropertyGroup>
-
 </Project>

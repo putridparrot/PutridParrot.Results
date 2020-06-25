@@ -1,5 +1,7 @@
 # PutridParrot.Results
 
+[![Build status](https://ci.appveyor.com/api/projects/status/852kct3ds4bpunun?svg=true)](https://ci.appveyor.com/project/putridparrot/putridparrot-results)
+
 ## Synopsis
 
 Sometimes we want to return more than just a return value. 
