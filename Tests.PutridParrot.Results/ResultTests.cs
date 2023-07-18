@@ -1,148 +1,109 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System.Diagnostics.CodeAnalysis;
 using PutridParrot.Results;
 
-namespace Tests.Results
+namespace Tests.PutridParrot.Results;
+
+[ExcludeFromCodeCoverage]
+[TestFixture]
+public class ResultTests
 {
-#if !NETSTANDARD1_6
-    [ExcludeFromCodeCoverage]
-#endif
-    [TestFixture]
-    public class ResultTests
+    [Test]
+    public void WhenSuccessCreated_IsSuccess_ReturnsTrue()
     {
-        [Test]
-        public void Success_DefaultProperties_ExpectSuccess()
-        {
-            var result = new Result<int>(ResultStatus.Success);
+        IResult result = new Success();
+        Assert.IsTrue(result.IsSuccess());
+    }
 
-            Assert.AreEqual(ResultStatus.Success, result.Status);
-        }
+    [Test]
+    public void WhenFailureCreated_IsSuccess_ReturnsFalse()
+    {
+        IResult result = new Failure();
+        Assert.IsFalse(result.IsSuccess());
+    }
 
-        [Test]
-        public void Failure_DefaultProperties_ExpectFailure()
-        {
-            var result = new Result<int>(ResultStatus.Failure);
+    [Test]
+    public void WhenSuccessCreate_IsFailure_ReturnsTrue()
+    {
+        IResult result = new Failure();
+        Assert.IsTrue(result.IsFailure());
+    }
 
-            Assert.AreEqual(ResultStatus.Failure, result.Status);
-        }
+    [Test]
+    public void WhenFailureCreate_IsFailure_ReturnsFalse()
+    {
+        IResult result = new Success();
+        Assert.IsFalse(result.IsFailure());
+    }
 
-        [Test]
-        public void Undefined_DefaultProperties_ExpectNotSet()
-        {
-            var result = new Result<int, string>();
+    [Test]
+    public void WhenSuccessTCreated_IsSuccess_ReturnsTrue()
+    {
+        IResult<bool> result = new Success<bool>(true);
+        Assert.IsTrue(result.IsSuccess());
+    }
 
-            Assert.AreEqual(ResultStatus.Undefined, result.Status);
-        }
-
-        [Test]
-        public void Success_WithValue_ExpectSuccess()
-        {
-            var result = new Result<int, string>(ResultStatus.Success, 123);
-
-            Assert.AreEqual(ResultStatus.Success, result.Status);
-            Assert.AreEqual(123, result.Value);
-        }
-
-        [Test]
-        public void Failure_WithValue_ExpectFailure()
-        {
-            var result = new Result<int, string>(ResultStatus.Failure, 123);
-
-            Assert.AreEqual(ResultStatus.Failure, result.Status);
-            Assert.AreEqual(123, result.Value);
-        }
-
-        [Test]
-        public void Undefined_WithValue_ExpectNotSet()
-        {
-            var result = new Result<int, string>(123);
-
-            Assert.AreEqual(ResultStatus.Undefined, result.Status);
-            Assert.AreEqual(123, result.Value);
-        }
-
-        [Test]
-        public void Message_WithSuccess_ByDefaultEmptyAndNotNull()
-        {
-            var result = new Result<int, string>(ResultStatus.Success);
-
-            Assert.IsEmpty(result.Messages);
-        }
-
-        [Test]
-        public void Message_WithFailure_ByDefaultEmptyAndNotNull()
-        {
-            var result = new Result<int, string>(ResultStatus.Failure);
-
-            Assert.IsEmpty(result.Messages);
-        }
-
-        [Test]
-        public void Message_WithUndefined_ByDefaultEmptyAndNotNull()
-        {
-            var result = new Result<int, string>(ResultStatus.Undefined);
-
-            Assert.IsEmpty(result.Messages);
-        }
-
-        [Test]
-        public void ToString_SingleMessage_ExpectSameMessageReturned()
-        {
-            var result = new Result<int, string>(ResultStatus.Success);
-            result.Messages.Add("This is a test message");
-
-            Assert.AreEqual("This is a test message", result.ToString());
-        }
-
-        [Test]
-        public void ToString_MultipleMessages_ExpectSameMessageReturned()
-        {
-            var result = new Result<int, string>(ResultStatus.Success);
-            result.Messages.Add("Message1");
-            result.Messages.Add("Message2");
-            result.Messages.Add("Message3");
-
-            Assert.AreEqual("Message1\r\nMessage2\r\nMessage3", result.ToString());
-        }
-
-        [Test]
-        public void ToString_MultipleMessagesUsingStatusCodeObject_ExpectSameMessageReturned()
-        {
-            var result = new Result<int, StatusCode>(ResultStatus.Success);
-            result.Messages.Add(new StatusCode(102, "Message1"));
-            result.Messages.Add(new StatusCode(103, "Message2"));
-            result.Messages.Add(new StatusCode(104, "Message3"));
-
-            Assert.AreEqual("102:Message1\r\n103:Message2\r\n104:Message3", result.ToString());
-        }
+    [Test]
+    public void WhenFailureTCreated_IsSuccess_ReturnsFalse()
+    {
+        IResult<bool> result = new Failure<bool>(true);
+        Assert.IsFalse(result.IsSuccess());
+    }
 
 
-        [Test]
-        public void Success_OnNonValueResult_DefaultProperties_ExpectSuccess()
-        {
-            var result = new Result(ResultStatus.Success);
+    [Test]
+    public void WhenFailureTCreated_IsFailure_ReturnsFalse()
+    {
+        IResult<bool> result = new Failure<bool>(true);
+        Assert.IsTrue(result.IsFailure());
+    }
 
-            Assert.AreEqual(ResultStatus.Success, result.Status);
-            Assert.AreEqual(default(object), result.Value);
-        }
+    [Test]
+    public void WhenSuccessTCreated_IsFailure_ReturnsFalse()
+    {
+        IResult<bool> result = new Success<bool>(true);
+        Assert.IsFalse(result.IsFailure());
+    }
 
-        [Test]
-        public void Failure_OnNonValueResult_DefaultProperties_ExpectFailure()
-        {
-            var result = new Result(ResultStatus.Failure);
+    [Test]
+    public void WhenFailureCreated_FailureMessage_ShouldNotBeEmpty()
+    {
+        IResult result = new Failure("This failed");
+        Assert.AreEqual("This failed", result.FailureMessage());
+    }
 
-            Assert.AreEqual(ResultStatus.Failure, result.Status);
-            Assert.AreEqual(default(object), result.Value);
-        }
+    [Test]
+    public void WhenFailureTCreated_FailureMessage_ShouldNotBeEmpty()
+    {
+        IResult<bool> result = new Failure<bool>(true,"This failed");
+        Assert.AreEqual("This failed", result.FailureMessage());
+    }
 
-        [Test]
-        public void Undefined_OnNonValueResult_DefaultProperties_ExpectNotSet()
-        {
-            var result = new Result();
+    [Test]
+    public void WhenSuccessCreated_FailureMessage_ShouldBeEmpty()
+    {
+        IResult result = new Success();
+        Assert.AreEqual("", result.FailureMessage());
+    }
 
-            Assert.AreEqual(ResultStatus.Undefined, result.Status);
-            Assert.AreEqual(default(object), result.Value);
-        }
+    [Test]
+    public void WhenSuccessTCreated_FailureMessage_ShouldBeEmpty()
+    {
+        IResult<bool> result = new Success<bool>(true);
+        Assert.AreEqual("", result.FailureMessage());
+    }
+
+    [Test]
+    public void WhenSuccessTCreated_ExpectValueToMatch()
+    {
+        IResult<string> result = new Success<string>("Scooby Doo");
+        Assert.AreEqual("Scooby Doo", result.Value);
+    }
+
+    [Test]
+    public void WhenFailureTCreated_ExpectValueToMatch()
+    {
+        IResult<string> result = new Failure<string>("Scooby Doo");
+        Assert.AreEqual("Scooby Doo", result.Value);
     }
 }
-

@@ -1,5 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
+    <TargetFrameworks>net7.0;net472;netstandard2.1</TargetFrameworks>
+	  <Nullable>enable</Nullable>
+	  <LangVersion>latest</LangVersion>
+	  <Version>1.0.0-alpha</Version>
+	  <Authors>Mark Timmings</Authors>
+	  <Company>PutridParrot</Company>
+	  <Description>Results classes/code</Description>
+	  <PackageIcon>PutridParrot.Results.png</PackageIcon>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <RepositoryUrl>https://github.com/putridparrot/PutridParrot.Results.git</RepositoryUrl>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+	<ItemGroup>
+		<None Include="..\PutridParrot.Results.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 </Project>

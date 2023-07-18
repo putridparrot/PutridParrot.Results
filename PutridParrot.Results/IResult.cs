@@ -1,29 +1,19 @@
-﻿
-using System.Collections.Generic;
+﻿namespace PutridParrot.Results;
 
-namespace PutridParrot.Results
+/// <summary>
+/// Implemented by Result types, Success
+/// and Failure being examples
+/// </summary>
+public interface IResult
 {
-    /// <summary>
-    /// A result may take different forms, they just need
-    /// to implement the IResult interface. A Result 
-    /// implementation exists for most requirements
-    /// </summary>
-    /// <typeparam name="T">The type of the Value returned</typeparam>
-    /// <typeparam name="TMessage">The type of any messages returned</typeparam>
-    public interface IResult<out T, TMessage>
-    {
-        /// <summary>
-        /// Gets the status of the return value
-        /// </summary>
-        ResultStatus Status { get; }
-        /// <summary>
-        /// Gets messages associated with the return
-        /// (if any exist)
-        /// </summary>
-        IList<TMessage> Messages { get; }
-        /// <summary>
-        /// Gets the return value of the given type
-        /// </summary>
-        T Value { get; }
-    }
+}
+
+/// <summary>
+/// Implemented by Result types, Success
+/// and Failure being examples, where data
+/// is associated with the result
+/// </summary>
+public interface IResult<out T> : IResult
+{
+    T Value { get; }
 }
