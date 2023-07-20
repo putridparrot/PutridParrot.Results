@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿#nullable enable
+using NUnit.Framework;
 using System.Diagnostics.CodeAnalysis;
 using PutridParrot.Results;
 

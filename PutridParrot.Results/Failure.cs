@@ -1,4 +1,6 @@
-﻿namespace PutridParrot.Results;
+﻿using System;
+
+namespace PutridParrot.Results;
 
 /// <summary>
 /// A basic failure result, it may be assigned a message
@@ -6,14 +8,9 @@
 /// </summary>
 public class Failure : IFailure
 {
-    public Failure() :
-        this(string.Empty)
+    public Failure(string? message = null)
     {
-    }
-
-    public Failure(string message)
-    {
-        Message = message;
+        Message = message ?? String.Empty;
     }
 
     public string Message { get; }
@@ -27,12 +24,7 @@ public class Failure : IFailure
 /// <typeparam name="T"></typeparam>
 public class Failure<T> : Failure, IFailure<T>
 {
-    public Failure(T result) :
-        this(result, string.Empty)
-    {
-    }
-
-    public Failure(T value, string message) :
+    public Failure(T value, string? message = null) :
         base(message)
     {
         Value = value;
