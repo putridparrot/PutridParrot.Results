@@ -21,11 +21,12 @@ then access a return value accordingly.
 IResult<string> DoSomething()
 {
     // do some stuff
-    // if failed
-    // return new Failure<string>("Failed");
+
+    // if failed, return a failure with a failure message
+    // return Result.Failure("Failed");
 
 
-    // if suceeded
-    return new Success<string>("Completed");
+    // if succeeded, with result value (a string in this case)
+    return Result.Success("Completed");
 }
 ```

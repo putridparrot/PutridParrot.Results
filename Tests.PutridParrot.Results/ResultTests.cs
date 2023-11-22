@@ -216,4 +216,26 @@ public class ResultTests
 
         Assert.IsTrue(error.IsSuccess());
     }
+
+    [Test]
+    public void ResultAsSuccessString()
+    {
+        const string resultString = "Completed";
+
+        var success = Result.Success(resultString);
+
+        Assert.IsTrue(success.IsSuccess());
+        Assert.AreEqual(resultString, success.Value);
+    }
+
+    [Test]
+    public void ResultAsFailureMessage()
+    {
+        const string resultString = "Failed";
+
+        var failure = Result.Failure(resultString);
+
+        Assert.IsTrue(failure.IsFailure());
+        Assert.AreEqual(resultString, failure.Message);
+    }
 }
