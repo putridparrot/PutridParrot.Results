@@ -12,8 +12,8 @@ public class AggregateResultTests
     [Test]
     public void IsSuccess_WhenOnlySuccessExists_ExpectTrue()
     {
-        var success1 = new Success();
-        var success2 = new Success();
+        var success1 = Result.Success();
+        var success2 = Result.Success();
 
         var aggregateResult = new AggregateResult(success1, success2);
 
@@ -23,8 +23,8 @@ public class AggregateResultTests
     [Test]
     public void IsSuccess_WhenFailureExists_ExpectFalse()
     {
-        var success = new Success();
-        var failure = new Failure();
+        var success = Result.Success();
+        var failure = Result.Failure();
 
         var aggregateResult = new AggregateResult(success, failure);
 
@@ -35,8 +35,8 @@ public class AggregateResultTests
     [Test]
     public void IsFailure_WhenNoFailuresExists_ExpectFalse()
     {
-        var success1 = new Success();
-        var success2 = new Success();
+        var success1 = Result.Success();
+        var success2 = Result.Success();
 
         var aggregateResult = new AggregateResult(success1, success2);
 
@@ -46,8 +46,8 @@ public class AggregateResultTests
     [Test]
     public void IsFailure_WhenFailureExists_ExpectTrue()
     {
-        var success = new Success();
-        var failure = new Failure();
+        var success = Result.Success();
+        var failure = Result.Failure();
 
         var aggregateResult = new AggregateResult(success, failure);
 
@@ -57,8 +57,8 @@ public class AggregateResultTests
     [Test]
     public void IsSuccess_WhenOnlySuccessAndSuccessTExists_ExpectTrue()
     {
-        var success1 = new Success();
-        var success2 = new Success<bool>(true);
+        var success1 = Result.Success();
+        var success2 = Result.Success(true);
 
         var aggregateResult = new AggregateResult(success1, success2);
 
@@ -68,8 +68,8 @@ public class AggregateResultTests
     [Test]
     public void IsSuccess_WhenOnlySuccessTExists_ExpectTrue()
     {
-        var success1 = new Success<bool>(true);
-        var success2 = new Success<bool>(true);
+        var success1 = Result.Success(true);
+        var success2 = Result.Success(true);
 
         var aggregateResult = new AggregateResult(success1, success2);
 
@@ -79,8 +79,8 @@ public class AggregateResultTests
     [Test]
     public void IsSuccess_WhenFailureTExists_ExpectFalse()
     {
-        var success = new Success<bool>(true);
-        var failure = new Failure<bool>(true);
+        var success = Result.Success(true);
+        var failure = Result.Failure(true);
 
         var aggregateResult = new AggregateResult(success, failure);
 
@@ -92,8 +92,8 @@ public class AggregateResultTests
     {
         var aggregateResult = new AggregateResult();
 
-        aggregateResult = new AggregateResult(aggregateResult, new Success<bool>(true));
-        aggregateResult = new AggregateResult(aggregateResult, new Failure<bool>(true));
+        aggregateResult = new AggregateResult(aggregateResult, Result.Success(true));
+        aggregateResult = new AggregateResult(aggregateResult, Result.Failure(true));
 
         Assert.IsFalse(aggregateResult.IsSuccess());
     }
@@ -103,8 +103,8 @@ public class AggregateResultTests
     {
         var aggregateResult = new AggregateResult();
 
-        aggregateResult = new AggregateResult(aggregateResult, new Success<bool>(true));
-        aggregateResult = new AggregateResult(aggregateResult, new Success<bool>(true));
+        aggregateResult = new AggregateResult(aggregateResult, Result.Success(true));
+        aggregateResult = new AggregateResult(aggregateResult, Result.Success(true));
 
         Assert.IsTrue(aggregateResult.IsSuccess());
     }
@@ -114,8 +114,8 @@ public class AggregateResultTests
     {
         var list = new List<IResult>
         {
-            new Success<bool>(true),
-            new Failure<bool>(true)
+            Result.Success(true),
+            Result.Failure(true)
         };
 
         var aggregateResult = new AggregateResult(list);
@@ -128,8 +128,8 @@ public class AggregateResultTests
     {
         var list = new List<IResult>
         {
-            new Success<bool>(true),
-            new Success<bool>(true)
+            Result.Success(true),
+            Result.Success(true)
         };
 
         var aggregateResult = new AggregateResult(list);
@@ -140,7 +140,7 @@ public class AggregateResultTests
     [Test]
     public void AggregateSingleResults_WithFailure_ExpectIsSuccessToBeFalse()
     {
-        var aggregateResult = new AggregateResult(new Failure<bool>(true));
+        var aggregateResult = new AggregateResult(Result.Failure(true));
 
         Assert.IsFalse(aggregateResult.IsSuccess());
     }
@@ -148,7 +148,7 @@ public class AggregateResultTests
     [Test]
     public void AggregateSingleResults_WithSuccess_ExpectIsSuccessToBeTrue()
     {
-        var aggregateResult = new AggregateResult(new Success<bool>(true));
+        var aggregateResult = new AggregateResult(Result.Success(true));
 
         Assert.IsTrue(aggregateResult.IsSuccess());
     }

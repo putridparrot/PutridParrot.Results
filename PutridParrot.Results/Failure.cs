@@ -8,7 +8,7 @@ namespace PutridParrot.Results;
 /// </summary>
 public class Failure : IFailure
 {
-    public Failure(string? message = null)
+    internal Failure(string? message = null)
     {
         Message = message ?? String.Empty;
     }
@@ -24,7 +24,7 @@ public class Failure : IFailure
 /// <typeparam name="T"></typeparam>
 public class Failure<T> : Failure, IFailure<T>
 {
-    public Failure(T value, string? message = null) :
+    internal Failure(T value, string? message = null) :
         base(message)
     {
         Value = value;

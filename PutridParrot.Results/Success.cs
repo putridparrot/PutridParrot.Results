@@ -2,11 +2,14 @@
 
 public class Success : ISuccess
 {
+    internal Success()
+    {
+    }
 }
 
 public class Success<T> : Success, ISuccess<T>
 {
-    public Success(T value)
+    internal Success(T value)
     {
         Value = value;
     }
